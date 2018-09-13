@@ -6,7 +6,7 @@
                 <h2>DETAIL KERANJANG</h2>
             </div>
             <div class="row clearfix">
-                <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="body">
                                 @if($items)
@@ -118,7 +118,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td></td>
-                                                            <td colspan="5" class="text-right text-semibold">Total Diskon Bunda :
+                                                            <td colspan="5" class="text-right text-semibold">Total Diskon :
                                                             </td>
                                                             <td class="text-right " nowrap="">
                                                                 Rp {{number_format($totalDiskon,0,',','.')}}</td>
@@ -362,7 +362,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td></td>
-                                                            <td colspan="5" class="text-right text-semibold">Total Diskon Bunda :
+                                                            <td colspan="5" class="text-right text-semibold">Total Diskon :
                                                             </td>
                                                             <td class="text-right " nowrap=""><input type="hidden" id="totalTransaksi" name="totalTransaksi" value="{{$totalTransaksi}}"><input type="hidden" id="totalDiskon" name="totalDiskon" value="{{$totalDiskon}}"><input type="hidden" id="totalBayar" name="totalBayar" value="{{$totalTransaksi-$totalDiskon}}">
                                                                 Rp {{number_format($totalDiskon,0,',','.')}}</td>
@@ -383,10 +383,8 @@
                                                         </tfoot>
                                                     </table>
                                                 </div>
-                                                <input id="acceptTerms-2" name="acceptTerms" type="checkbox" required>
-                                                <label for="acceptTerms-2">I agree with the Terms and Conditions.</label>
 
-                                                <button class="btn btn-success btn-lg pull-right" type="submit">Submit</button>
+                                                <button class="btn btn-success btn-lg pull-right" type="submit">Check out</button>
                                             </div>
                                         </div>
                                     </div>

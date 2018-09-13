@@ -11,32 +11,68 @@
                         <div class="body">
                             <form class="form-horizontal">
                                 <div class="row clearfix">
-                                    <div class="col-lg-1 col-md-1 col-sm-4 col-xs-5 form-control-label">
-                                        <label for="tgl_awal">Mulai</label>
+                                    <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 form-control-label">
+                                        <label for="tgl_awal">Periode </label>
                                     </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-8 col-xs-7">
+                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="tgl_awal" class="date form-control" placeholder="Tanggal mulai" value="<?php echo date("Y-m-d", strtotime("-1 months"))?>">
+                                                <select class="form-control show-tick" id="bulan" name="bulan" required>
+                                                    <option <?php if(date('m') == "01"){ echo 'selected';}?> value="01">Januari</option>
+                                                    <option <?php if(date('m') == "02"){ echo 'selected';}?> value="02">Febuari</option>
+                                                    <option <?php if(date('m') == "03"){ echo 'selected';}?> value="03">Maret</option>
+                                                    <option <?php if(date('m') == "04"){ echo 'selected';}?> value="04">April</option>
+                                                    <option <?php if(date('m') == "05"){ echo 'selected';}?> value="05">Mei</option>
+                                                    <option <?php if(date('m') == "06"){ echo 'selected';}?> value="06">Juni</option>
+                                                    <option <?php if(date('m') == "07"){ echo 'selected';}?> value="07">Juli</option>
+                                                    <option <?php if(date('m') == "08"){ echo 'selected';}?> value="08">Agustus</option>
+                                                    <option <?php if(date('m') == "09"){ echo 'selected';}?> value="09">September</option>
+                                                    <option <?php if(date('m') == "10"){ echo 'selected';}?> value="10">Oktober</option>
+                                                    <option <?php if(date('m') == "11"){ echo 'selected';}?> value="11">Nopember</option>
+                                                    <option <?php if(date('m') == "12"){ echo 'selected';}?> value="12">Desember</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-3">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <select class="form-control show-tick" id="tahun" name="tahun" required>
+                                                    <option value="2018">2018</option>
+                                                    <option value="2017">2017</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row clearfix">
+                                    <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 form-control-label">
+                                        <label for="tgl_awal">Mulai</label>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <input type="text" id="tgl_awal" class="date form-control" placeholder="Tanggal mulai" value="<?php echo date("Y-m-01")?>">
                                             </div>
                                         </div>
                                     </div>   
-                                    <div class="col-lg-1 col-md-1 col-sm-8 col-xs-5 form-control-label">
+                                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2 form-control-label">
                                         <label for="tgl_akhir">Hingga</label>
                                     </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-8 col-xs-7">
+                                    <div class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="tgl_akhir" class="date form-control" placeholder="Tanggal selesai" value="<?php echo date("Y-m-d")?>">
+                                                <input type="text" id="tgl_akhir" class="date form-control" placeholder="Tanggal selesai" value="<?php echo date("Y-m-t")?>">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row clearfix">
-                                    <div class="col-lg-1 col-md-1 col-sm-4 col-xs-5 form-control-label">
+                                    <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2 form-control-label">
                                         <label for="tgl_awal">Code</label>
                                     </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-8 col-xs-7">
+                                    <div class="col-lg-4 col-md-4 col-sm-10 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
                                                 <input type="text" id="keyword" class="form-control" placeholder="Code">

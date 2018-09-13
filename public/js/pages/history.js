@@ -3,6 +3,34 @@ $(function () {
     var tglAkhir = $("#tgl_akhir").val();
     var keyword = $("#keyword").val();
 
+    $('#bulan').on('click', function (e) {
+        var tglAwal = $("#tgl_awal").val();
+        var itemsAwal = tglAwal.split('-');
+        var newMonth = $(this).val();
+        var newDateAwal = itemsAwal[0] + "-" + newMonth + "-" + itemsAwal[2];
+        $("#tgl_awal").val(newDateAwal);
+
+        var lastDay = new Date(itemsAwal[2], parseInt(newMonth), 0);
+        var tglAkhir = $("#tgl_akhir").val();
+        var itemsAkhir = tglAkhir.split('-');
+        var newDateAkhir = itemsAkhir[0] + "-" + (lastDay.getMonth()+1).toString().replace(/(^.$)/,"0$1") + "-" + (lastDay.getDate());
+        $("#tgl_akhir").val(newDateAkhir);
+
+    });
+
+    $('#tahun').on('click', function (e) {
+        var tglAwal = $("#tgl_awal").val();
+        var itemsAwal = tglAwal.split('-');
+        var newYear = $(this).val();
+        var newDateAwal = newYear + "-" + itemsAwal[1] + "-" + itemsAwal[2];
+        $("#tgl_awal").val(newDateAwal);
+
+        var tglAkhir = $("#tgl_akhir").val();
+        var itemsAkhir = tglAkhir.split('-');
+        var newDateAkhir = newYear + "-" + itemsAkhir[1] + "-" + itemsAkhir[2];
+        $("#tgl_akhir").val(newDateAkhir);
+    });
+
     $('.date').bootstrapMaterialDatePicker({
         format: 'YYYY-MM-DD',
         clearButton: true,

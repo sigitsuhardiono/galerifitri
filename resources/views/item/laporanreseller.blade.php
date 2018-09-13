@@ -14,10 +14,10 @@
                         <div class="body">
                             <form class="form-horizontal">
                                 <div class="row clearfix">
-                                    <div class="col-lg-1 col-md-1 col-sm-4 col-xs-5 form-control-label">
+                                    <div class="col-lg-1 col-md-1 col-sm-4 col-xs-4 form-control-label">
                                         <label for="tgl_awal">Periode </label>
                                     </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-8 col-xs-7">
+                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
                                         <div class="form-group">
                                             <div class="form-line">
                                                 <select class="form-control show-tick" id="bulan" name="bulan" required>
@@ -37,7 +37,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-8 col-xs-7">
+                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
                                         <div class="form-group">
                                             <div class="form-line">
                                                 <select class="form-control show-tick" id="tahun" name="tahun" required>

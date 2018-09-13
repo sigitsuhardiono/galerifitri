@@ -73,7 +73,7 @@
                                     <form class="form-horizontal form">
                                         <div class="form-group">
                                             <label style="margin-bottom: 0px;margin-top: 0px;" class="col-md-2 h6 control-label" for="example-hf-email">Nama Pelanggan : </label>
-                                            <div style="margin-bottom: 0px;margin-top: 0px;" class="col-md-8 h6 form-control-static text-black" id="namaCaption">{{$shops->receiver_phone}}</div>
+                                            <div style="margin-bottom: 0px;margin-top: 0px;" class="col-md-8 h6 form-control-static text-black" id="namaCaption">{{$shops->customers->name}}</div>
                                         </div>
                                         <div class="form-group">
                                             <label style="margin-bottom: 0px;margin-top: 0px;" class="col-md-2 h6 control-label" for="example-hf-email">No. Handphone : </label>

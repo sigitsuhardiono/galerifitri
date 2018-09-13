@@ -78,24 +78,37 @@ class HomeController extends Controller
                 return Carbon::parse($date->created_at)->format('m'); // grouping by months
             });
 
-        $usermcount = [];
-        $userMont = [];
-        $userArr    = [];
-        $bulanPenjualan    = [];
-        $bulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'Nopember', 'Desember'];
+        $usermcount     = [];
+        $userMont       = [];
+        $userArr        = [];
+        $bulanPenjualan = [];
+        $bulan          = [
+            'Januari',
+            'Februari',
+            'Maret',
+            'April',
+            'Mei',
+            'Juni',
+            'Juli',
+            'Agustus',
+            'September',
+            'Oktober',
+            'Nopember',
+            'Desember'
+        ];
         foreach ($dataPenjualan as $key => $value) {
             $usermcount[(int)$key - 1] = count($value);
         }
         for ($i = 0; $i < 12; $i++) {
             if (!empty($usermcount[$i])) {
-                $userArr[] = $usermcount[$i];
+                $userArr[]  = $usermcount[$i];
                 $userMont[] = $i;
-            } 
+            }
         }
-        foreach ($userMont as $key => $value){
-            $bulanPenjualan[] = $bulan[$value+1];
+        foreach ($userMont as $key => $value) {
+            $bulanPenjualan[] = $bulan[$value + 1];
         }
-        $data["linePenjualan"] = $userArr;
+        $data["linePenjualan"]  = $userArr;
         $data["bulanPenjualan"] = $bulanPenjualan;
         return view('home/index', $data);
     }
@@ -186,7 +199,10 @@ class HomeController extends Controller
             $dep->users_id    = $req->userId;
             $dep->nominal     = $req->nominal;
             $dep->transfer_at = $req->tgltransfer . " " . date("h:i:s");
-            $dep->approve_at  = $req->tglapprove . " " . date("h:i:s");;
+            $dep->approve_at  = $req->tglapprove . " " . date("h:i:s");
+            if($req->note == null){
+                $req->note = "";
+            }
             $dep->note = $req->note;
             $dep->save();
             $userDet          = UserDetail::where('users_id', $req->userId)->first();
@@ -967,13 +983,13 @@ class HomeController extends Controller
             $resellerdtl->is_deposit = 0;
             $resellerdtl->deposit    = 0;
             $resellerdtl->balance    = 0;
-            $level = "";
+            $level                   = "";
             if ($req->level == "2") {
-                $level = "Reseller";
-                $resellerdtl->target    = 1500000;
+                $level               = "Reseller";
+                $resellerdtl->target = 1500000;
             } else {
-                $level = "Marketer";
-                $resellerdtl->target    = 500000;
+                $level               = "Marketer";
+                $resellerdtl->target = 500000;
             }
 
             $resellerdtl->save();
@@ -984,7 +1000,8 @@ class HomeController extends Controller
 
     public function editrekanan($id)
     {
-        $data = $shops = \App\User::where('id', $id)->with("detail")->whereHas('detail', function ($q) {})->get();
+        $data = $shops = \App\User::where('id', $id)->with("detail")->whereHas('detail', function ($q) {
+        })->get();
         return view('home/editrekanan', compact('data'));
     }
 
@@ -1018,13 +1035,13 @@ class HomeController extends Controller
         $resellerdtl->discount       = $req->diskon;;
         $resellerdtl->is_deposit = 0;
         $resellerdtl->balance    = 0;
-        $level = "";
+        $level                   = "";
         if ($req->level == "2") {
-            $level = "Reseller";
-            $resellerdtl->target    = 1500000;
+            $level               = "Reseller";
+            $resellerdtl->target = 1500000;
         } else {
-            $level = "Marketer";
-            $resellerdtl->target    = 500000;
+            $level               = "Marketer";
+            $resellerdtl->target = 500000;
         }
         $resellerdtl->save();
         $req->session()->flash('success', $level . ' ' . $req->nama . ' has been update');

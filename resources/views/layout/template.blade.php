@@ -78,7 +78,7 @@
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Notifications -->
-                    <li class="dropdown">
+                    <li class="pull-right">
                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
                             <i class="material-icons">shopping_cart</i>
                             <span class="label-count jumlah-transaksi">0</span>
@@ -142,14 +142,6 @@
                             <span>Home</span>
                         </a>
                     </li>
-                    @if(Auth::user()->detail->levels_id == "1")
-                        <li class="{{ request()->is('brand*')||request()->is('tambahbrand*') ? 'active' : '' }}">
-                            <a href="{{ url('brand') }}">
-                                <i class="material-icons">note</i>
-                                <span>Brand</span>
-                            </a>
-                        </li>
-                    @endif  
                     <li class="{{ request()->is('product*') ? 'active' : '' }}">
                         <a href="{{ url('product') }}">
                             <i class="material-icons">shopping_cart</i>
@@ -159,7 +151,7 @@
                     <li class="{{ request()->is('shop/history*')||request()->is('shop/konfirmasi*')||request()->is('shop/inputresi*') ? 'active' : '' }}">
                         <a href="{{url('shop/history')}}">
                             <i class="material-icons">view_list</i>
-                            <span>Data Penjuanlan</span>
+                            <span>Data Penjualan</span>
                         </a>
                     </li>
                     @if(Auth::user()->detail->levels_id !== 3)

@@ -3,6 +3,9 @@ $(function () {
         type: 'image'
     });
 
+    $(".touchspin-data").TouchSpin({
+        min: 1,
+    });
 });
 function beliProdukByJumlahCustom() {
 
@@ -14,6 +17,7 @@ function pilihJumlahProduk(id, obj) {
     //if (obj >= 20) obj = Math.round(obj/2)
     $('#jumlahCustom').val(obj);
     $('#idproduk').val(id);
+    $('#jumlahSpin').val(1);
     $('#mJumlahProduk').modal('show');
 }
 

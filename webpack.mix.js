@@ -82,7 +82,8 @@ mix.scripts([
     'resources/assets/plugin/js/bootstrap-select.js',
     'resources/assets/plugin/js/bootstrap-notify.js',
     'resources/assets/plugin/js/sweetalert.min.js',
-    'resources/assets/plugin/js/jquery.magnific-popup.min.js'
+    'resources/assets/plugin/js/jquery.magnific-popup.min.js',
+    'resources/assets/plugin/js/touchspin.min.js'
 ], 'public/plugin/js/product.js');
 
 mix.scripts([

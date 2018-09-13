@@ -12,6 +12,7 @@
                             <div class="row clearfix">
                                 <form class="form-horizontal" action="#" onsubmit="return reloadData()">'
                                     <div class="col-md-12 text-center text-semibold">
+                                        <h4>Sisa Deposit Rp {{number_format((Auth::user()->detail->deposit), 0, ',', '.')}}</h4>
                                         <h4>Silahkan Hubungi Distributor / Agen Untuk Menambah Isi Dompet</h4>
                                         <a class="btn btn-xs btn-success" target="__blank" href="https://api.whatsapp.com/send?phone=081336419207&amp;text=Assalamualaikum,%20Mau%20Tambah%20Isi%20Dompet%20BBH%20Sebesar%20:%20Rp.%20">HUBUNGI SEKARANG</a>
                                         <br><br>

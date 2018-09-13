@@ -45,14 +45,14 @@ class ItemController extends Controller
                 "%{$nama}%")
                 ->with("brands")
                 ->with("itemdetails")
-                ->orderBy('created_at', 'desc')
+                ->orderBy('name', 'asc')
                 ->get();
             }
             if(!is_null($req->brand) && is_null($req->namabarang)){
                  $data['items']       = \App\Item::where('active', 1)->where('brands_id', $brand)
                 ->with("brands")
                 ->with("itemdetails")
-                     ->orderBy('created_at', 'desc')
+                     ->orderBy('name', 'asc')
                 ->get();
             }
             if(!is_null($req->brand) && !is_null($req->namabarang)){
@@ -60,7 +60,7 @@ class ItemController extends Controller
                 "%{$nama}%")
                 ->with("brands")
                 ->with("itemdetails")
-                    ->orderBy('created_at', 'desc')
+                    ->orderBy('name', 'asc')
                 ->get();
             }
             $brands              = \App\Brand::get();
@@ -72,7 +72,7 @@ class ItemController extends Controller
         $data['items']       = \App\Item::where('active', 1)
             ->with("brands")
             ->with("itemdetails")
-            ->orderBy('created_at', 'desc')
+            ->orderBy('name', 'asc')
             ->get();
         $brands              = \App\Brand::get();
         $data["brands"]      = $brands;

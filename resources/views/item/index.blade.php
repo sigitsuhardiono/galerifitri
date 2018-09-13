@@ -160,47 +160,23 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <center>
-                        <p>
-                            <button style="width: 100%" onclick="beliProdukByJumlah(1)"
-                                    class="btn bg-primary-300 btn-xlg">1 PCS
-                            </button>
+                        <p class="pull-right">
+
+                            <a href="javacript:void(0)" class="btn btn-danger btn-xlg"
+                               data-dismiss="modal">X</a>
                         </p>
-                        <p>
-                            <button style="width: 100%" onclick="beliProdukByJumlah(5)" class="btn bg-primary btn-xlg">5
-                                PCS
-                            </button>
-                        </p>
-                        <p>
-                            <button style="width: 100%" onclick="beliProdukByJumlah(10)"
-                                    class="btn bg-primary-600 btn-xlg">10 PCS
-                            </button>
-                        </p>
-                        <p>
-                            <button style="width: 100%" onclick="beliProdukByJumlah(15)"
-                                    class="btn bg-primary-700 btn-xlg">15 PCS
-                            </button>
-                        </p>
-                        <p>
-                            <button style="width: 100%" onclick="beliProdukByJumlah(20)"
-                                    class="btn bg-primary-800 btn-xlg">20 PCS
-                            </button>
-                        </p>
-                        <hr>
-                        <p>
-                        <div class="input-group">
-                            <div class="form-line">
-                                <input type="number" class="form-control" id="jumlahCustom"
-                                       style="height: 42px !important; text-align: center;font-weight: bold; font-size: 20px;"
-                                       name="jumlahCustom" value="1"></div>
-                            <span class="input-group-addon" onclick="beliProdukByJumlahCustom()">
-                            <button class="btn bg-pink waves-effect" style="width: 100%">BELI</button>
-                            </span>
+
+                        <p class="pull-left">
+                        <div class="input-group" style="padding-top: 50px;">
+                            <input type="text" id="jumlahSpin"
+                                   style="font-weight: bold; font-size: 20px; display: block;border-bottom:1px solid #ddd" value="1"
+                                   class="touchspin-data text-center" readonly="true">
                         </div>
                         </p>
                         <p>
 
-                            <a href="javacript:void(0)" style="width: 100%" class="btn btn-danger btn-xlg"
-                               data-dismiss="modal">BATAL</a>
+                            <a href="javacript:void(0)" onclick="beliProdukByJumlah($('#jumlahSpin').val())" style="width: 100%" class="btn bg-pink btn-xlg"
+                               data-dismiss="modal">Masukan Keranjang</a>
                         </p>
                     </center>
                 </div>
