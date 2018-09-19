@@ -92,6 +92,7 @@ Route::get('/showrekanan', 'HomeController@showrekanan');
 Route::get('/shop/rekanan/edit/{id}', 'HomeController@editrekanan');
 Route::post('edit-rekanan', 'HomeController@updaterekanan');
 Route::get('/shop/rekanan/delete/{id}', 'HomeController@deleterekanan');
+Route::get('/user', 'HomeController@user');
 
 
 

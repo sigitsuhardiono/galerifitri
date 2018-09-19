@@ -195,6 +195,13 @@
                             @endif
                         </ul>
                     </li>
+                    <li class="{{ request()->is('user*') ? 'active' : '' }}">
+                        <a href="{{ url('user') }}">
+                            <i class="material-icons">shopping_cart</i>
+                            <span>Manage User</span>
+                        </a>
+                    </li>
+
                 </ul>
             </div>
             <!-- #Menu -->
